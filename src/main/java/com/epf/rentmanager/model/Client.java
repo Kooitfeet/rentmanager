@@ -35,6 +35,9 @@ public class Client {
     }
 
     // getter
+    public long getId() {
+        return id;
+    }
     public String getNom() {
         return nom;
     }

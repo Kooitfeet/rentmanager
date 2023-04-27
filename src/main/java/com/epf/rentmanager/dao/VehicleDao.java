@@ -18,10 +18,10 @@ public class VehicleDao {
 
 	private VehicleDao() {}
 	
-	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, nb_places) VALUES(?, ?);";
+	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, nb_places, model) VALUES(?, ?);";
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
-	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, nb_places FROM Vehicle WHERE id=?;";
-	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places FROM Vehicle;";
+	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle WHERE id=?;";
+	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle;";
 	
 	public long create(Vehicle vehicle) throws DaoException {
 		return 0;
@@ -42,7 +42,7 @@ public class VehicleDao {
 			while(rs.next()){
 				int nb_places = rs.getInt("nb_places");
 				String constructeur = rs.getString("constructeur");
-				String modele = "";
+				String modele = rs.getString("model");
 
 				vehicle = new Vehicle(id,nb_places,constructeur,modele);
 			}
@@ -65,7 +65,7 @@ public class VehicleDao {
 				int id = rs.getInt("id");
 				int nb_places = rs.getInt("nb_places");
 				String constructeur = rs.getString("constructeur");
-				String modele = "";
+				String modele = rs.getString("model");
 
 				vehicles.add(new Vehicle(id,nb_places,constructeur,modele));
 			}

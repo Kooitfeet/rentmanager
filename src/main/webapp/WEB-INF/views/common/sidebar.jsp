@@ -7,7 +7,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">NAVIGATION</li>
             <li>
-                <a href="${pageContext.request.contextPath}/users/list">
+                <a href="${pageContext.request.contextPath}/users">
                     <i class="fa fa-user"></i> <span>Utilisateurs</span>
                 </a>
             </li>
