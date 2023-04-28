@@ -6,6 +6,7 @@ C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentma
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\utils\IOUtils.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ClientListServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ClientCreateServlet.java
+C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\VehiclesDeleteServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\configuration\WebConfiguration.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\dao\ClientDao.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\exception\DaoException.java

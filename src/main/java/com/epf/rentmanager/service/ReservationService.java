@@ -6,6 +6,7 @@ import com.epf.rentmanager.dao.ReservationDao;
 import com.epf.rentmanager.dao.VehicleDao;
 import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
+import com.epf.rentmanager.model.Client;
 import com.epf.rentmanager.model.Reservation;
 import com.epf.rentmanager.dao.ReservationDao;
 import com.epf.rentmanager.model.Vehicle;
@@ -29,6 +30,13 @@ public class ReservationService {
             e.printStackTrace();
         }
         return 0;
+    }
+    public long delete(Reservation reservation) throws ServiceException {
+        try {
+            return this.reservationDao.delete(reservation);
+        } catch (DaoException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

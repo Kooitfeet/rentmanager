@@ -49,7 +49,16 @@ public class ReservationDao {
 	}
 	
 	public long delete(Reservation reservation) throws DaoException {
-		return 0;
+		try {
+			Connection conn = ConnectionManager.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(DELETE_RESERVATION_QUERY,
+					Statement.RETURN_GENERATED_KEYS);
+			stmt.setInt(1, (int) reservation.getId());
+			long key = ((PreparedStatement) stmt).executeUpdate();
+			return key;
+		} catch (SQLException e) {
+			throw new DaoException();
+		}
 	}
 	
 	public List<Reservation> findResaByClientId(long clientId) throws DaoException {

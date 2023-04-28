@@ -28,6 +28,13 @@ public class VehicleService {
 		}
 		return 0;
 	}
+	public long delete(Vehicle vehicle) throws ServiceException {
+		try {
+			return this.vehicleDao.delete(vehicle);
+		} catch (DaoException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 	public Vehicle findById(long id) throws ServiceException {
 		try{

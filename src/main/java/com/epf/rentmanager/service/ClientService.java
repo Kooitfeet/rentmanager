@@ -7,6 +7,7 @@ import com.epf.rentmanager.dao.ClientDao;
 import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.model.Client;
+import com.epf.rentmanager.model.Vehicle;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,6 +29,14 @@ public class ClientService {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+
+	public long delete(Client client) throws ServiceException {
+		try {
+			return this.clientDao.delete(client);
+		} catch (DaoException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	public Client findById(long id) throws ServiceException {
