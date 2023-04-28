@@ -21,8 +21,11 @@ public class VehicleService {
 	}
 
 	public long create(Vehicle vehicle) throws ServiceException {
-		// TODO: créer un véhicule
-
+		try {
+			return this.vehicleDao.create(vehicle);
+		} catch (DaoException e) {
+			e.printStackTrace();
+		}
 		return 0;
 	}
 

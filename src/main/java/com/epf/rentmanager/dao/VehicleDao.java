@@ -18,13 +18,25 @@ public class VehicleDao {
 
 	private VehicleDao() {}
 	
-	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, nb_places, model) VALUES(?, ?);";
+	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, nb_places, model) VALUES(?, ?, ?);";
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle;";
 	
 	public long create(Vehicle vehicle) throws DaoException {
-		return 0;
+		try {
+			Connection conn = ConnectionManager.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(CREATE_VEHICLE_QUERY,
+					Statement.RETURN_GENERATED_KEYS);
+			stmt.setString(1, vehicle.getConstructeur());
+			stmt.setString(3, vehicle.getModele());
+			stmt.setInt(2, vehicle.getNbPlaces());
+			long key = ((PreparedStatement) stmt).executeUpdate();
+			conn.close();
+			return key;
+		} catch (SQLException e) {
+			throw new DaoException();
+		}
 	}
 
 	public long delete(Vehicle vehicle) throws DaoException {

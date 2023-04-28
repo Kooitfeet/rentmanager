@@ -27,9 +27,15 @@ public class Reservation {
     public Client getClient() {
         return client;
     }
+    public long getIdClient() {
+        return client.getId();
+    }
 
     public Vehicle getVehicle() {
         return vehicle;
+    }
+    public long getIdVehicle() {
+        return vehicle.getId();
     }
 
     public LocalDate getDateDebut() {

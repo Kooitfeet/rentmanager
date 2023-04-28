@@ -22,7 +22,11 @@ public class ClientService {
 	
 	
 	public long create(Client client) throws ServiceException {
-		// TODO: créer un client
+		try {
+			return this.clientDao.create(client);
+		} catch (DaoException e) {
+			e.printStackTrace();
+		}
 		return 0;
 	}
 
