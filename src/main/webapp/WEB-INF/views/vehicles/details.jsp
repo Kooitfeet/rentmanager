@@ -20,7 +20,7 @@
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <h3 class="profile-username text-center">${user.getPrenom()} ${user.getNom()} (${user.getEmail()})</h3>
+                            <h3 class="profile-username text-center">${vehicle.getConstructeur()} ${vehicle.getModele()}</h3>
 
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
@@ -69,15 +69,15 @@
                                     <table class="table table-striped">
                                         <tr>
                                             <th style="width: 10px">#</th>
-                                            <th>Modele</th>
-                                            <th>Constructeur</th>
-                                            <th style=>Nombre de places</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+                                            <th style=>Email</th>
                                             <tr>
                                             <c:forEach items="${reservations}" var="reservation">
-                                                <td>${reservation.getVehicle().getId()}</td>
-                                                <td>${reservation.getVehicle().getModele()}</td>
-                                                <td>${reservation.getVehicle().getConstructeur()}</td>
-                                                <td>${reservation.getVehicle().getNbPlaces()}</td>
+                                                <td>${reservation.getClient().getId()}</td>
+                                                <td>${reservation.getClient().getNom()}</td>
+                                                <td>${reservation.getClient().getPrenom()}</td>
+                                                <td>${reservation.getClient().getEmail()}</td>
                                              </tr>
                                             </c:forEach>
                                     </table>

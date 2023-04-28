@@ -1,5 +1,7 @@
 package com.epf.rentmanager.service;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.epf.rentmanager.dao.ClientDao;
@@ -58,6 +60,13 @@ public class VehicleService {
 		try {
 			return findAll().size();
 		} catch (ServiceException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	public ArrayList<Vehicle> findVehicleByClientId(long id) throws ServiceException {
+		try {
+			return this.vehicleDao.findVehicleByClientId(id);
+		} catch (DaoException e) {
 			throw new RuntimeException(e);
 		}
 	}

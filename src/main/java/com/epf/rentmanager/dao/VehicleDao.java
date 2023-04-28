@@ -22,6 +22,7 @@ public class VehicleDao {
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle;";
+	private static final String FIND_RESERVATIONS_VEHICLE_BY_CLIENT_QUERY = "SELECT * FROM Reservation INNER JOIN Vehicle ON Reservation.vehicle_id = Vehicle.id WHERE client_id=?;";
 	
 	public long create(Vehicle vehicle) throws DaoException {
 		try {
@@ -95,5 +96,26 @@ public class VehicleDao {
 			throw new DaoException();
 		}
 		return vehicles;
+	}
+	public ArrayList<Vehicle> findVehicleByClientId(long clientId) throws DaoException {
+		try {
+			Connection conn = ConnectionManager.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(FIND_RESERVATIONS_VEHICLE_BY_CLIENT_QUERY);
+			stmt.setLong(1, clientId);
+			ResultSet rs = stmt.executeQuery();
+			ArrayList<Vehicle> carsList = new ArrayList<Vehicle>();
+			while (rs.next()) {
+				Vehicle vehicule = new Vehicle();
+				vehicule.setConstructeur(rs.getString("constructeur"));
+				vehicule.setNbPlaces(rs.getInt("nb_places"));
+				vehicule.setModele(rs.getString("model"));
+
+				carsList.add(vehicule);
+			}
+			conn.close();
+			return carsList;
+		} catch (SQLException e) {
+			throw new DaoException();
+		}
 	}
 }

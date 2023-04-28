@@ -41,7 +41,7 @@
                                     <td>${vehicle.getModele()}</td>
                                     <td>${vehicle.getNbPlaces()}</td>
                                     <td>
-                                        <a class="btn btn-primary disabled" href="car-detail.html">
+                                        <a class="btn btn-primary disabled" href="${pageContext.request.contextPath}/cars/details?id=${vehicle.id}">
                                             <i class="fa fa-play"></i>
                                         </a>
                                         <a class="btn btn-success disabled" href="#">

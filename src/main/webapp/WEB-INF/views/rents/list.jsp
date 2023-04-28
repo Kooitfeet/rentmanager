@@ -42,7 +42,7 @@
                                             <td>${reservation.getDateDebut()}</td>
                                             <td>${reservation.getDateFin()}</td>
                                             <td>
-                                                <a class="btn btn-primary disabled" href="car-detail.html">
+                                                <a class="btn btn-primary disabled" href="${pageContext.request.contextPath}/rents/details?id=${reservation.id}">
                                                     <i class="fa fa-play"></i>
                                                 </a>
                                                 <a class="btn btn-success disabled" href="#">

@@ -39,7 +39,14 @@ public class ReservationService {
         }
     }
 
-
+    public Reservation findById(long id) throws ServiceException {
+        try{
+            return reservationDao.findById(id);
+        } catch (DaoException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
     public List<Reservation> findAll() throws ServiceException {
         try{
             return reservationDao.findAll();
@@ -53,6 +60,22 @@ public class ReservationService {
         try {
             return findAll().size();
         } catch (ServiceException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public List<Reservation> findResaByClientId(long id) throws ServiceException {
+        try{
+            return reservationDao.findResaByClientId(id);
+        } catch (DaoException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+    public List<Reservation> findResaByVehiculeId(long id) throws ServiceException {
+        try{
+            return reservationDao.findResaByVehiculeId(id);
+        } catch (DaoException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

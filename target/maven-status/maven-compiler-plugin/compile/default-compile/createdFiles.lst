@@ -14,14 +14,17 @@ com\epf\rentmanager\model\Vehicle.class
 com\epf\rentmanager\servlet\HomeServlet.class
 com\epf\rentmanager\dao\ClientDao.class
 com\epf\rentmanager\configuration\AppConfiguration.class
+com\epf\rentmanager\servlet\ClientDetailsServlet.class
 com\epf\rentmanager\servlet\ReservationListServlet.class
 com\epf\rentmanager\main\main.class
 com\epf\rentmanager\service\ReservationService.class
+com\epf\rentmanager\servlet\VehiclesDetailsServlet.class
 com\epf\rentmanager\ui\Test.class
 com\epf\rentmanager\servlet\VehiclesListServlet.class
 com\epf\rentmanager\utils\IOUtils.class
 com\epf\rentmanager\servlet\ReservationDeleteServlet.class
 com\epf\rentmanager\persistence\FillDatabase.class
+com\epf\rentmanager\servlet\ReservationDetailsServlet.class
 com\epf\rentmanager\servlet\VehiclesCreateServlet.class
 com\epf\rentmanager\service\ClientService.class
 com\epf\rentmanager\dao\VehicleDao.class
