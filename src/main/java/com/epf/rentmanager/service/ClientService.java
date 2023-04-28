@@ -64,4 +64,11 @@ public class ClientService {
 			throw new RuntimeException(e);
 		}
 	}
+	public long update(Client client) throws ServiceException {
+		try {
+			return this.clientDao.update(client);
+		} catch (DaoException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

@@ -20,6 +20,7 @@ public class VehicleDao {
 	
 	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, nb_places, model) VALUES(?, ?, ?);";
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
+	private static final String UPDATE_VEHICLE_QUERY = "UPDATE Vehicle SET constructeur = ?, model = ?, nb_places = ? WHERE id = ?;";
 	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places, model FROM Vehicle;";
 	private static final String FIND_RESERVATIONS_VEHICLE_BY_CLIENT_QUERY = "SELECT * FROM Reservation INNER JOIN Vehicle ON Reservation.vehicle_id = Vehicle.id WHERE client_id=?;";
@@ -108,12 +109,29 @@ public class VehicleDao {
 				Vehicle vehicule = new Vehicle();
 				vehicule.setConstructeur(rs.getString("constructeur"));
 				vehicule.setNbPlaces(rs.getInt("nb_places"));
+
 				vehicule.setModele(rs.getString("model"));
 
 				carsList.add(vehicule);
 			}
 			conn.close();
 			return carsList;
+		} catch (SQLException e) {
+			throw new DaoException();
+		}
+	}
+
+	public long update(Vehicle vehicle) throws DaoException {
+		try {
+			Connection conn = ConnectionManager.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(UPDATE_VEHICLE_QUERY, Statement.RETURN_GENERATED_KEYS);
+			stmt.setString(1, vehicle.getConstructeur());
+			stmt.setInt(3, vehicle.getNbPlaces());
+			stmt.setString(2, vehicle.getModele());
+			stmt.setLong(4, vehicle.getId());
+			long key = stmt.executeUpdate();
+			conn.close();
+			return key;
 		} catch (SQLException e) {
 			throw new DaoException();
 		}

@@ -79,4 +79,11 @@ public class ReservationService {
             throw new RuntimeException(e);
         }
     }
+    public long update(Reservation reservation) throws ServiceException {
+        try {
+            return this.reservationDao.update(reservation);
+        } catch (DaoException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

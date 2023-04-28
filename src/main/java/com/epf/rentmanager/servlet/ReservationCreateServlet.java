@@ -55,7 +55,6 @@ public class ReservationCreateServlet extends HttpServlet {
         reservation.setDateDebut(LocalDate.parse(request.getParameter("debut")));
         reservation.setDateFin(LocalDate.parse(request.getParameter("fin")));
         try {
-            System.out.println(request.getParameter("client"));
             reservation.setClient(clientService.findById(Long.parseLong(request.getParameter("client"))));
             reservation.setVehicle(vehicleService.findById(Long.parseLong(request.getParameter("vehicule"))));
         } catch (ServiceException e) {

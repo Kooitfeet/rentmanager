@@ -1,4 +1,5 @@
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ReservationCreateServlet.java
+C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\VehiculeUpdateServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\model\Reservation.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ClientDetailsServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\VehiclesCreateServlet.java
@@ -7,6 +8,7 @@ C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentma
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\utils\IOUtils.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ClientListServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ClientDeleteServlet.java
+C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ReservationUpdateServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ClientCreateServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\VehiclesDeleteServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\configuration\WebConfiguration.java
@@ -16,14 +18,17 @@ C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentma
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\service\ReservationService.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\configuration\AppConfiguration.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ReservationListServlet.java
+C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ClientUpdateServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\model\Vehicle.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\service\ClientService.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\service\VehicleService.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\model\Client.java
+C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\VehiclesDetailsServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ReservationDeleteServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\persistence\FillDatabase.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\ui\Test.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\dao\ReservationDao.java
+C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\servlet\ReservationDetailsServlet.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\main\main.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\persistence\ConnectionManager.java
 C:\Users\mdum7\Dropbox\Travail\EPF\Java\rentManager\src\main\java\com\epf\rentmanager\dao\VehicleDao.java

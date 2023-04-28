@@ -70,4 +70,11 @@ public class VehicleService {
 			throw new RuntimeException(e);
 		}
 	}
+	public long update(Vehicle vehicle) throws ServiceException {
+		try {
+			return this.vehicleDao.update(vehicle);
+		} catch (DaoException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
